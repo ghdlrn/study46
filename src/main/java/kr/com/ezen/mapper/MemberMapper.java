@@ -1,0 +1,21 @@
+package kr.com.ezen.mapper;
+
+import java.util.List;
+
+import org.apache.ibatis.annotations.Select;
+
+import kr.com.ezen.dto.MemberVO;
+
+public interface MemberMapper {
+
+	@Select("select sysdate from dual")
+	public String getTime();
+	
+	public String getTime2();
+	
+	public int insertMember(MemberVO vo);
+	public int updateMember(MemberVO vo);
+	public int delectMember(int id);
+	public MemberVO selectOneMember(int id);
+	public List<MemberVO> selectAllList();
+}
